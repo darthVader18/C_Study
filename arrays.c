@@ -115,3 +115,227 @@ What if I don't mention the length?
 Designator could be any non-negative integer.
 Compiler will deduce the length of the array from the largest designator in the list.
 */
+
+/////////////////////////////////////
+
+/*
+Count Array Elements by using sizeof Operator:
+
+sizeof(name_of_arr)/sizeof(name of arr[0])
+
+size of 1 array element * number of elements = size of whole array
+number of elements = size of whole array / number of elements
+
+*/
+
+////////////////////////////////////
+
+/*
+Introduction to Multidimensional Arrays:
+Multidimensional array can be defined as an array of arrays.
+General form of declaring N-dimensional array as follows:
+data_type name_of_array [size1][size2]...[sizeN];
+
+Size of multidimensional array can be calculated by multiplying the size of all the dimensions.
+For example:
+size of a[10][20] = 10 * 20 = 200
+                  = 200 * 4 = 800
+We can store upto 200 elements in this array
+
+size of a [4][10][20] = 4 *10 * 20 = 800
+                      = 800 * 4 = 3200 bytes
+We can store upto 800 elements in this array.
+*/
+
+////////////////////////////////////
+
+/*
+Introduction to Two-Dimensional (2D) Arrays:
+The basic form of declaring an two dimensional array is:
+data_type name_of_array [x][y]; //here x is rows and y is columns
+where x and y are representing the size of the array.
+
+How to initialize two dimensional array?
+int a[2][3] = {{1,2,3}, {4,5,6}};
+
+Using row index and column index we can access 2D array elements
+For example:
+If we have to access the above array, we can write:
+a[0][1] that is 2
+
+Printing 2D array:
+
+for(i = 0; i<2; i++)    //this example is for the above array
+{
+    for(j = 0; j<3; j++)
+    {
+        printf("%d ", a[i][j]);
+    }
+}
+
+1 = 0   j = 0   a[0][0]
+1 = 0   j = 1   a[0][1]
+1 = 0   j = 2   a[0][2]
+1 = 1   j = 0   a[1][0]
+1 = 1   j = 1   a[1][1]
+1 = 1   j = 2   a[1][2]
+Output = 1 2 3 4 5 6
+*/
+
+////////////////////////////////////
+
+/*
+Introduction to Three-Dimensional (3D) Arrays:
+Initializing:
+int a[2][2][3] = {
+                    {{1,2,3}}, {4,5,6},
+                    {7,8,9}, {10,11,12}}
+                 };
+There will be two matrices of 2*3
+
+Printing:
+for(i = 0; i<2; i++)    //this example is for the above array
+{
+    for(j = 0; j<2; j++)
+    {
+        for(k = 0; k<3; k++)
+        {
+            printf("%d ", a[i][j][k]);
+        }
+    }
+}
+
+*/
+
+////////////////////////////////////
+
+/*
+C Program for Matrix Multiplication:
+
+In order to multiply two matrices, #columns of 1st matrix = #rows of 2nd matrix
+Also, size of the resultant matrix depends on #rows of 1st matrix and #column of 2nd matrix
+*/
+/*
+#include<stdio.h>
+#define MAX 50
+int main()
+{
+    int a[MAX][MAX], b[MAX][MAX], product[MAX][MAX];
+    int arows, acolumns, brows, bcolumns;
+    int i, j, k;
+    int sum = 0;
+
+    // Part 1
+    printf("Enter the rows and columns of the matrix a: ");
+    scanf("%d %d", &arows, &acolumns);
+
+    printf("Enter the elements of matrix a:\n");
+    for(i=0; i<arows; i++)
+    {
+        for(j=0; j<acolumns; j++)
+        {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    printf("Enter the rows and columns of the matrix b: ");
+    scanf("%d %d", &brows, &bcolumns);
+
+    if(brows != acolumns)
+    {
+        printf("Sorry! We cannot multiply the matrices a and b");
+    }
+    else
+    {
+        printf("Enter the elements of matrix b:\n");
+
+        for(i=0; i<brows; i++)
+        {
+            for(j=0; j<bcolumns; j++)
+            {
+                scanf("%d", &b[i][j]);
+            }
+        }
+    }
+
+    printf("\n");
+
+    for(i = 0; i<arows; i++)
+    {
+        for(j = 0; j<bcolumns; j++)
+        {
+            for(k = 0; k<brows; k++)
+            {
+                sum += a[i][k] * b[k][j];
+            }
+            product[i][j] = sum;
+            sum = 0;
+        }
+    }
+
+    // Printing the array elements
+    printf("Resultant matrix\n");
+    for(i = 0; i<arows; i++)
+    {
+        for(j = 0; j<bcolumns; j++)
+        {
+            printf("%d ", product[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+*/
+
+////////////////////////////////////
+
+/*
+Constant Arrays:
+Either one dimensional or multi-dimensional arrays can be made constant by starting the declaration with the
+keyword const.
+We cannot change the elements of the array anywhere in the program.
+Advantage:
+It assures that the program will not modify the array which may contain some valuable information.
+It may also helps the compiler to catch errors by informing that there is no intention  to modify this array.
+*/
+
+////////////////////////////////////
+
+/*
+Variable Length Arrays:
+Reverse a series of number(New program)
+*/
+
+#include<stdio.h>
+int main()
+{
+    int n;
+
+    printf("Enter the number of elements you want to reverse: \n");
+    scanf("%d", &n);
+
+    int a[n];
+    int i;
+    printf("Enter all the %d elements: \n", n);
+    for(i=0; i<n; i++)
+    {
+        scanf("%d ", &a[i]);
+    }
+
+    printf("Elements in reverse order: \n");
+    for(i=n-1; i>=0; i--)
+    {
+        printf("%d ", a[i]);
+    }
+    return 0;
+}
+/*
+Advantages:
+At the time of execution, we can decide the length of the array.
+No need to choose the fix length while writing the code.
+Even arbitrary expressions are possible.
+
+Variable length arrays cannot have static storage duration.
+Variable length array does not have the initializer.
+
+*/
