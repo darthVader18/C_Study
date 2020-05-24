@@ -78,4 +78,45 @@ In these types of data structures, the memory is allocated at run time. Therefor
 Advantage: Faster insertion and deletion
 Disadvantage: Slower access
 
+///////////////////////////////////////////////////////
+
+Asymptotic Analysis:
+
+Efficiency of data structure is always measured in terms of TIME and SPACE.
+An ideal data structure could be the one that takes the least possible time for all its operations and consumes
+the least memory space.
+If the size of the input is n, then f(n) is a function of n denotes the time complexity.
+
+Big O notation is used to measure the performance of any algorithm by providing the order of growth of the function.
+It gives the upper bound on a function by which we can make sure that the function will never grow faster than
+this upper bound.
+
+/////////////////////////////////////////////////////////
+
+Void Pointers:
+
+Void pointer is a pointer which has no associated data type with it.
+It can point to any data of any data type and can be typecasted to any type.
+malloc and calloc functions return void pointer. Due to this reason, they can allocate memory for any type of data.
+
+////////////////////////////////////////////////////////////
+
+Null Pointers:
+
+A NULL pointer is a pointer that does not point to any memory location. It represents an invalid memory location.
+When a NULL value is assigned to a pointer, then the pointer is considered as NULL pointer.
+
+/////////////////////////////////////////////////////////////
+
+Dangling Pointers:
+
+A dangling pointer is a pointer which points to some non-existing memory location.
+
+/////////////////////////////////////////////////////////////
+
+Wild Pointers:
+
+Wild pointers are also known as uninitialized pointers.
+These pointers usually point to some arbitrary memory location and may cause a program to crash or misbehave.
+
 */
