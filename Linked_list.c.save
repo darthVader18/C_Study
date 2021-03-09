@@ -1,0 +1,26 @@
+/*
+
+//////////////////////////////////
+
+Types of linked list
+Single Linked List: Navigation is forward only.
+Doubly Linked List: Forward and backward navigation is possible.
+Circular Linked List: LAst element is linked to the first element.
+
+Single Linked List:
+A single linked list is made up of nodes that consists of two parts.
+Data
+Link
+
+
+//////////////////////////////////
+
+
+
+//////////////////////////////////
+
+
+
+//////////////////////////////////
+
+*/
